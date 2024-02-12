@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1 id="titulo">CODIFICADOR DE TEXTOS</h1>
@@ -13,17 +15,26 @@
     <main class="main">
         <div class="main1_container">
             <div id="main_textarea">
-                <textarea placeholder="Digite seu Texto" name="" id="texto1" cols="30" rows="10"></textarea>
-                <textarea class="main2_container" disabled name="" placeholder="Nenhum texto para embaralhar!" id="resultado" cols="30" rows="10"></textarea>
+                <textarea name="" id="texto1" cols="30" rows="10"></textarea>
+                <textarea id="resultado" class="main2_container" disabled name=""></textarea>
+                <div id="warning">
+                    <img src="./img/bell.svg" alt="alerta">
+                    <p id="warning_text"></p>
+                </div>
+                <div class="copy_icon"><img src="./img/copy.svg" alt="imagem de copiar"></div>
+                <div class="message" id="message">Copiar</div>
+
             </div>
-            <div class="button_main">
-                <button class="btn_box1" id="btn_criptografar">Codificar</button>
+            <div class="btn_main">
+                <button disabled class="btn_box1" id="btn_criptografar">Codificar</button>
                 <button class="btn_box1" id="btn_descriptografar">Descodificar</button>
                 <button class="btn_box1" id="reset">Resetar</button>
             </div>
         </div>
+
     </main>
     <footer></footer>
     <script src="./app.js"></script>
 </body>
+
 </html>

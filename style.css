@@ -31,11 +31,14 @@ header h1 {
 
 .main1_container {
     width: 100%;
+    height: auto;
     padding: 5px;
-
 }
 
 textarea {
+
+    width: 25rem;
+    height: 20rem;
     border-radius: .4rem;
     border: none;
     box-shadow: 1px 1px 5px;
@@ -49,12 +52,38 @@ textarea:focus {
 }
 
 .button_main {
-    width: fit-content;
+    width: 100%;
     margin: 2.5rem 0 0 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
     padding: 5px;
+}
+
+.copy_icon {
+    width: 20px;
+    position: absolute;
+    left: 51rem;
+    top: 18.5rem;
+    display: none;
+}
+
+.copy_icon:hover {
+    cursor: pointer;
+}
+.message {
+    width: 7%;
+    height: fit-content;
+    padding: 5px;
+    background: #3E8ACC;
+    color: #fff;
+    border-radius: 1rem 0 1rem 0;
+
+    position:absolute;
+    left: 53rem;
+    top: 18rem;
+    display: none;
 }
 
 .btn_box1 {
@@ -70,8 +99,12 @@ textarea:focus {
 
 }
 
+.texto1__warning {
+    box-shadow: 1px 1px 5px red;
+}
+
 #btn_criptografar {
-    background: #7BD500;
+    background: #bbbbbb;
 }
 
 
@@ -91,9 +124,18 @@ textarea:focus {
 }
 
 #main_textarea {
+    position: relative;
     display: flex;
     gap: 1rem;
 
+}
+
+.btn_main {
+    display: flex;
+    margin: 10px 0 0 0;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 .btn_box1:active {
@@ -105,22 +147,24 @@ textarea:focus {
     padding: 10px;
 }
 
-.main1_container textarea {
+.main1_container input {
     padding: 10px;
     text-align: justify;
 
 }
 
 .main2_container {
+
+    height: auto;
     padding: 10px;
     background: #ffff url('./img/encrypt.svg') no-repeat center;
-    background-size:contain;
+    background-size: cover;
     text-align: left;
 
     font-size: 1rem;
 }
 
-.main2_container textarea:focus {
+.main2_container input:focus {
     background: #fff;
 
 }
@@ -141,40 +185,33 @@ textarea:focus {
     box-shadow: none;
 }
 
+#warning {
+    width: 25px;
+    padding: 2px;
+    border-radius: 1rem;
+    display: flex;
+    background: #F08080;
+    position: absolute;
+    top: -2.2rem;
+
+    font-size: .8rem;
+    font-family: var(--font-default);
+    visibility: hidden;
+
+}
+
+#warning_text {
+    padding: 4px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffff;
+}
+
 @media (max-width: 412px) {
     .main {
         width: 90%;
         flex-direction: column;
     }
 }
-
-/* Extra small devices (phones, 600px and down) */
-/* @media only screen and (max-width: 600px) {...} */
-/* Small devices (portrait tablets and large phones, 600px and up) */
-/* @media only screen and (min-width: 600px) {...} */
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-    #main_textarea{
-        flex-direction: column;
-    }
-    #texto1 {
-        width: 50vw;
-    }
-    #resultado{
-        width: 50vw;
-    }
-
-} 
-/* Large devices (laptops/desktops, 992px and up) */
- @media only screen and (max-width: 992px) {
-    #main_textarea{
-        flex-direction: column;
-    }
-    #texto1 {
-        width: 100%;
-    }
-    #resultado{
-        width: 100%;
-    }
- }
-/* Extra large devices (large laptops and desktops, 1200px and up) */
