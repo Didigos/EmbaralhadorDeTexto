@@ -28,6 +28,7 @@ texto1.addEventListener('input', function (event) {
         btn_cripto.setAttribute('disabled',true)
         warning.style.visibility = 'visible'
         warning.style.width = 'fit-content'
+        btn_cripto.style.cursor = 'no-drop'
         warning_text.textContent = 'Não pode conter letras Maíusculas!'
 
     } else if (temAcentuacao(textoDigitado)) {
@@ -36,6 +37,7 @@ texto1.addEventListener('input', function (event) {
         btn_cripto.setAttribute('disabled',true)
         warning.style.visibility = 'visible'
         warning.style.width = 'fit-content'
+        btn_cripto.style.cursor = 'no-drop'
         warning_text.textContent = 'Não pode conter acentuação!'
     }
     else {
@@ -43,6 +45,7 @@ texto1.addEventListener('input', function (event) {
         btn_cripto.removeAttribute('disabled')
         btn_cripto.style.background = '#04AA6D'
         warning.style.width = '25px'
+        btn_cripto.style.cursor = 'pointer'
         warning.style.visibility = 'hidden'
     }
 
