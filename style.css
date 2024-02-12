@@ -273,6 +273,7 @@ textarea:focus {
     }
 
     #warning {
-        top: -7rem;
+        top: 18rem;
+        left: .2rem;
     }
 }
