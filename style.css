@@ -71,8 +71,8 @@ textarea:focus {
 .copy_icon {
     width: 20px;
     position: absolute;
-    left: 52.5rem;
-    top: 20rem;
+    left: 49rem;
+    top: 18rem;
     display: none;
 }
 
@@ -232,7 +232,7 @@ textarea:focus {
 /* Medium devices (landscape tablets, 768px and up) */
 /* @media only screen and (min-width: 768px) {...} */
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (max-width: 992px) {
+@media (max-width: 992px) {
 
     .main {
         width: 100%;
