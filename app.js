@@ -85,6 +85,7 @@ function descript() {
     resultado.style.background = '#ffff'
     resultado.removeAttribute('disabled')
     resultado.textContent = textodescriptografado
+    btn_copy.style.display = 'block'
 }
 
 function copiarTexto() {
