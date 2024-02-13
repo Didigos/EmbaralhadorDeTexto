@@ -82,10 +82,9 @@ function encripto() {
 function descript() {
     let textoColado = texto1.value
     let textodescriptografado = textoColado.replace(/enter/g, 'e').replace(/imes/g, 'i').replace(/ai/g, 'a').replace(/ober/g, 'o').replace(/ufat/g, 'u')
-
+    resultado.style.background = '#ffff'
     resultado.removeAttribute('disabled')
-
-    return resultado.textContent = textodescriptografado
+    resultado.textContent = textodescriptografado
 }
 
 function copiarTexto() {
