@@ -68,13 +68,13 @@ textarea:focus {
     padding: 5px;
 }
 
-.copy_icon {
+/* .copy_icon {
     width: 20px;
     position: absolute;
     left: 49rem;
     top: 18rem;
     display: none;
-}
+} */
 
 .copy_icon:hover {
     cursor: pointer;
@@ -261,7 +261,7 @@ textarea:focus {
     .copy_icon {
         width: 20px;
         position: absolute;
-        left: 1rem;
+        left: .5rem;
         top: 39rem;
     }
 
