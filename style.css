@@ -261,8 +261,8 @@ textarea:focus {
     .copy_icon {
         width: 20px;
         position: absolute;
-        left: 1rem;
-        top: 37rem;
+        left: .8rem;
+        top: 34rem;
     }
 
     .message {
