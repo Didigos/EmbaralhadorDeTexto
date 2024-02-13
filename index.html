@@ -13,10 +13,11 @@
         <h1 id="titulo">CODIFICADOR DE TEXTOS</h1>
     </header>
     <main class="main">
-        <div class="main1_container">
+        <div class="main1_container"> 
             <div id="main_textarea">
-                <textarea  name="" id="texto1" cols="30" rows="10"></textarea>
-                <textarea  id="resultado" class="main2_container" disabled name=""></textarea>
+                <textarea  class="textarea" id="texto1" cols="30" rows="10"></textarea>
+                <textarea type="text"  id="resultado" class="main2_container"disabled></textarea> 
+                
                 <div id="warning">
                     <img src="./img/bell.svg" alt="alerta">
                     <p id="warning_text"></p>
@@ -26,8 +27,8 @@
 
             </div>
             <div class="btn_main">
-                <button disabled class="btn_box1" id="btn_criptografar">Codificar</button>
-                <button class="btn_box1" id="btn_descriptografar">Descodificar</button>
+                <button disabled class="btn_box1" onclick="encripto()" id="btn_criptografar">Codificar</button>
+                <button class="btn_box1" onclick="descript()" id="btn_descriptografar">Descodificar</button>
                 <button class="btn_box1" id="reset">Resetar</button>
             </div>
         </div>

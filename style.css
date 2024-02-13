@@ -25,7 +25,39 @@ header h1 {
     font-family: var(--fonte-titulo);
     color: var(--cor-default);
 }
+/* ELEMENTOS DAS CAIXAS DE TEXTO */
+textarea {
 
+    width: 25rem;
+    height: 20rem;
+    padding: 10px;
+    border-radius: .4rem;
+    box-shadow: 1px 1px 5px;
+    font-size: 1.5rem;
+    color: gray;
+    resize: none;
+    border: none;
+}
+
+
+textarea:focus {
+    outline: none;
+}
+
+.main2_container {
+
+    height: auto;
+    background: #ffff url('./img/encrypt.svg') no-repeat center;
+    background-size: cover;
+    text-align: left;
+
+}
+
+.main2_container input:focus {
+    background: #fff;
+
+}
+/* fim da estilização da caixa de texto */
 .main {
     display: flex;
     padding: 5px;
@@ -33,30 +65,19 @@ header h1 {
 
 }
 
+.main1_container input {
+    padding: 10px;
+    text-align: justify;
+
+}
+
+
 .main1_container {
     width: 100%;
     height: auto;
     padding: 5px;
 }
 
-textarea {
-
-    width: 25rem;
-    height: 20rem;
-    padding: 1rem;
-    border-radius: .4rem;
-    border: none;
-    box-shadow: 1px 1px 5px;
-    color: gray;
-    font-size: 1.5rem;
-
-    resize: none;
-}
-
-
-textarea:focus {
-    outline: none;
-}
 
 .button_main {
     width: 100%;
@@ -151,32 +172,7 @@ textarea:focus {
     background-color: #E9ECF8;
 }
 
-.main2_container {
-    width: 25rem;
-    padding: 10px;
-}
 
-.main1_container input {
-    padding: 10px;
-    text-align: justify;
-
-}
-
-.main2_container {
-
-    height: auto;
-    padding: 10px;
-    background: #ffff url('./img/encrypt.svg') no-repeat center;
-    background-size: cover;
-    text-align: left;
-
-    font-size: 1rem;
-}
-
-.main2_container input:focus {
-    background: #fff;
-
-}
 
 #copiar {
     border-radius: 1rem;
@@ -208,6 +204,8 @@ textarea:focus {
     visibility: hidden;
 
 }
+
+
 
 #warning_text {
     width: 220px;

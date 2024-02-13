@@ -1,22 +1,39 @@
-const resultado = document.querySelector('#resultado');
-const btn_cripto = document.querySelector('#btn_criptografar');
-const btn_descript = document.querySelector('#btn_descriptografar');
-const main2_container = document.querySelector('.button_main');
-const main_textarea = document.querySelector('#main_textarea');
-let texto1 = document.querySelector('#texto1');
-const reset = document.querySelector('#reset');
-const btn_copy = document.querySelector('.copy_icon');
-const message = document.querySelector('.message');
-const warning = document.querySelector('#warning');
-const warning_text = document.querySelector('#warning_text');
+//DOM PARA PEGAR OS ELEMENTOS HTML
+const resultado = document.querySelector('#resultado'); //TEXTO QUE APARECE QUANDO CLICA EM CRIPTOGRAFAR;
+const btn_cripto = document.querySelector('#btn_criptografar'); //BOTÃO DE CRIPTOGRAFAR;
+const btn_descript = document.querySelector('#btn_descriptografar'); //BOTÃO DE DESCRIPTOGRAFAR;
 
-btn_descript.addEventListener('click', () => {
-    descript()
+let texto1 = document.querySelector('#texto1'); //TEXTAREA ONDE O USUARIO COLOCAR O TEXTO PARA ENCRIPTOGRAFAR OU DESCRIPTOGRAFAR;
+const reset = document.querySelector('#reset'); // BOTÃO DE RESET;
+const btn_copy = document.querySelector('.copy_icon'); //ICONE DE COPIAR COM EVENTO DE CLICK;
+const message = document.querySelector('.message'); // MENSAGEM DE COPIAR E COPIADO QUE FICA NO ELEMENTO btn_copy;
+const warning = document.querySelector('#warning'); // DIV QUE CONTÉM O TEXTO DE AVISO
+const warning_text = document.querySelector('#warning_text'); //AVISO DE QUANDO USA LETRAS MAIUSCULAS OU COM ASCENTUAÇÃO;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                  EVENTOS
+
+
+//EVENTO DE ATUALIZAR A PÁGINA QUANDO CLICADO EM RESET
+reset.addEventListener('click', () => location.reload());
+
+//EVENTOS DE QUANDO PASSAR O MOUSE EM CIMA APARECER A DIV DE COPIAR E SUMIR AO TIRAR O MOUSE
+btn_copy.addEventListener('mouseover', ()=>{
+    message.style.display = 'block';
 });
 
-btn_cripto.addEventListener('click', () => {
-    encripto()
+btn_copy.addEventListener('mouseout', ()=>{
+    message.style.display = 'none';
+    message.style.background = '#3E8ACC';
+    message.textContent = 'Copiar';
 });
+
+btn_copy.addEventListener('click',()=>{
+    copiarTexto();
+    message.style.background = '#04AA6D';
+    message.textContent = 'Copiado!';
+});
+
 
 texto1.addEventListener('input', function (event) {
 
@@ -44,37 +61,19 @@ texto1.addEventListener('input', function (event) {
         texto1.classList.remove('texto1__warning');
         btn_cripto.removeAttribute('disabled');
         btn_cripto.style.background = '#04AA6D';
-        warning.style.width = '25px';
         btn_cripto.style.cursor = 'pointer';
         warning.style.visibility = 'hidden';
     };
 
 });
 
-reset.addEventListener('click', () => location.reload());
-
-btn_copy.addEventListener('mouseover', ()=>{
-    message.style.display = 'block';
-});
-
-btn_copy.addEventListener('mouseout', ()=>{
-    message.style.display = 'none';
-    message.style.background = '#3E8ACC';
-    message.textContent = 'Copiar';
-});
-
-btn_copy.addEventListener('click',()=>{
-    copiarTexto();
-    message.style.background = '#04AA6D';
-    message.textContent = 'Copiado!';
-});
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                  FUNÇÕES
 function encripto() {
     let textoDigitado = texto1.value.toLowerCase();
     let textoModificado = textoDigitado.replace(/e/g, 'enter').replace(/i/g, 'imes').replace(/a/g, 'ai').replace(/o/g, 'ober').replace(/u/g, 'ufat');
     resultado.style.background = '#ffff';
-    resultado.removeAttribute('disabled');
-    resultado.textContent = textoModificado;
+    resultado.value = textoModificado
     btn_copy.style.display = 'block';
 
 };
@@ -83,15 +82,17 @@ function descript() {
     let textoColado = texto1.value
     let textodescriptografado = textoColado.replace(/enter/g, 'e').replace(/imes/g, 'i').replace(/ai/g, 'a').replace(/ober/g, 'o').replace(/ufat/g, 'u');
     resultado.style.background = '#ffff';
-    resultado.removeAttribute('disabled');
-    resultado.textContent = textodescriptografado;
+    resultado.value = textodescriptografado
     btn_copy.style.display = 'block';
 };
 
 function copiarTexto() {
+
+    resultado.removeAttribute('disabled')
     resultado.select();
     document.execCommand("copy");
     window.getSelection().removeAllRanges();
+    resultado.setAttribute('disabled', true)
 };
 
 function removeAcenturacoes(texto) {
