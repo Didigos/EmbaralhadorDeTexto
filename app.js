@@ -43,6 +43,11 @@ texto1.addEventListener('input', function (event) {
         texto1.classList.add('texto1__warning');
         btn_cripto.style.background = '#bbbbbb';
         btn_cripto.setAttribute('disabled',true);
+        
+        btn_descript.setAttribute('disabled',true);
+        btn_descript.style.background = '#bbbbbb';
+        btn_descript.style.cursor = 'no-drop';
+
         warning.style.visibility = 'visible';
         warning.style.width = 'fit-content';
         btn_cripto.style.cursor = 'no-drop';
@@ -52,6 +57,10 @@ texto1.addEventListener('input', function (event) {
         texto1.classList.add('texto1__warning');
         btn_cripto.style.background = '#bbbbbb';
         btn_cripto.setAttribute('disabled',true);
+        btn_descript.setAttribute('disabled',true);
+        btn_descript.style.background = '#bbbbbb';
+        btn_descript.style.cursor = 'no-drop';
+
         warning.style.visibility = 'visible';
         warning.style.width = 'fit-content';
         btn_cripto.style.cursor = 'no-drop';
@@ -63,6 +72,11 @@ texto1.addEventListener('input', function (event) {
         btn_cripto.style.background = '#04AA6D';
         btn_cripto.style.cursor = 'pointer';
         warning.style.visibility = 'hidden';
+
+        btn_descript.removeAttribute('disabled');
+        btn_descript.style.background = '#3E8ACC';
+        btn_descript.style.cursor = 'pointer';
+
     };
 
 });
